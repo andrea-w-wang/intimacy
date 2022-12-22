@@ -70,6 +70,9 @@ def finetune_mdistilbert(finetune_lang):
         logging_steps=50,
         eval_steps=50,
         evaluation_strategy='steps',
+        save_strategy = 'steps', # default
+        save_steps = 100,
+        load_best_model_at_end = True
     )
     trainer = Trainer(
         model=model,  # the instantiated 🤗 Transformers model to be trained
@@ -82,6 +85,9 @@ def finetune_mdistilbert(finetune_lang):
     print("training")
 
     trainer.train()
+    
+    print("save best model")
+    model.save_pretrained(model_output_path + "/best")
 
 
 if __name__ == '__main__':
