@@ -1,5 +1,6 @@
 import pandas as pd
 import pickle as pk
+from sklearn.model_selection import train_test_split
 
 data_dir = './data/'
 data = pd.read_csv(data_dir + "train.csv")
