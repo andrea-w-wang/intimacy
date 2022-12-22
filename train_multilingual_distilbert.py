@@ -59,10 +59,10 @@ def finetune_mdistilbert(finetune_lang):
 
     print("Set up trainer")
     training_args = TrainingArguments(
-        output_dir=model_output_path,  # output directory
-        num_train_epochs = 5,  # total number of training epochs
-        per_device_train_batch_size=16,  # batch size per device during training
-        per_device_eval_batch_size=20,  # batch size for evaluation
+        output_dir = model_output_path,  # output directory
+        num_train_epochs = 20,  # total number of training epochs
+        per_device_train_batch_size = 16,  # batch size per device during training
+        per_device_eval_batch_size = 20,  # batch size for evaluation
         learning_rate=5e-5,  # initial learning rate for Adam optimizer
         warmup_steps=50,  # number of warmup steps for learning rate scheduler
         weight_decay=0.01,  # strength of weight decay
